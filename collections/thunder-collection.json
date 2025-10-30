@@ -1,0 +1,58 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Bolsas CRUD",
+  "dateExported": "2025-10-30T04:06:09.934075",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "name": "GET todas las bolsas",
+      "url": "http://localhost:3000/api/bolsas",
+      "method": "GET",
+      "headers": [],
+      "body": {}
+    },
+    {
+      "name": "POST crear bolsa",
+      "url": "http://localhost:3000/api/bolsas",
+      "method": "POST",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"sku\": \"BOL-CLAS-001\", \"nombre\": \"Bolsa Clásica de Piel\", \"precio\": 1899, \"descripcion\": \"Bolsa tote de piel vacuna\", \"categoria\": \"tote\", \"variantes\": [{\"color\": \"Negro\", \"acabado\": \"Mate\", \"stock\": 5}]}"
+      }
+    },
+    {
+      "name": "PATCH actualizar (reemplaza :id)",
+      "url": "http://localhost:3000/api/bolsas/:id",
+      "method": "PATCH",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\"precio\": 1999}"
+      }
+    },
+    {
+      "name": "DELETE eliminar (reemplaza :id)",
+      "url": "http://localhost:3000/api/bolsas/:id",
+      "method": "DELETE",
+      "headers": []
+    },
+    {
+      "name": "SEARCH por texto",
+      "url": "http://localhost:3000/api/bolsas/search?q=piel",
+      "method": "GET",
+      "headers": []
+    }
+  ]
+}

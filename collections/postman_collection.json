@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "Bolsas CRUD",
+    "_postman_id": "11111111-1111-1111-1111-111111111111",
+    "description": "Colección Postman para probar el CRUD de bolsas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET todas las bolsas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/bolsas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "bolsas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST crear bolsa",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sku\": \"BOL-CLAS-001\", \"nombre\": \"Bolsa Clásica de Piel\", \"precio\": 1899, \"descripcion\": \"Bolsa tote de piel vacuna\", \"categoria\": \"tote\", \"variantes\": [{\"color\": \"Negro\", \"acabado\": \"Mate\", \"stock\": 5}]}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/bolsas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "bolsas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PATCH actualizar (reemplaza :id)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"precio\": 1999}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/bolsas/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "bolsas",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "DELETE eliminar (reemplaza :id)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/bolsas/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "bolsas",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "SEARCH por texto",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/bolsas/search?q=piel",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "bolsas",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "piel"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
